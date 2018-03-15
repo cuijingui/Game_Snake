@@ -50,6 +50,10 @@ public class Snake {
 		this.direction = direction;
 	}
 
+	public Direction getDirection(){
+		return this.direction;
+	}
+
 	public void move(){
 		movebody();
 		switch (this.direction) {

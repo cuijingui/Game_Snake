@@ -26,19 +26,27 @@ public class WindowEventListener implements MouseMotionListener, KeyListener, Mo
 		//KeyEvent中各项属性的内容
 		switch (keyevent.getKeyCode()) {
 		case KeyEvent.VK_UP:
-			snake.turn(Direction.UP);
+			if(!snake.getDirection().equals(Direction.DOWN)) {
+				snake.turn(Direction.UP);
+			}
 			System.out.print("这是VK_UP");
 			break;
 		case KeyEvent.VK_DOWN:
-			snake.turn(Direction.DOWN);
+			if(!snake.getDirection().equals(Direction.UP)) {
+				snake.turn(Direction.DOWN);
+			}
 			System.out.print("这是VK_DOWN");
 			break;
 		case KeyEvent.VK_LEFT:
-			snake.turn(Direction.LEFT);
+			if(!snake.getDirection().equals(Direction.RIGHT)) {
+				snake.turn(Direction.LEFT);
+			}
 			System.out.print("这是VK_LEFT");
 			break;
 		case KeyEvent.VK_RIGHT:
-			snake.turn(Direction.RIGHT);
+			if(!snake.getDirection().equals(Direction.LEFT)) {
+				snake.turn(Direction.RIGHT);
+			}
 			System.out.print("这是VK_RIGHT");
 			break;
 		case KeyEvent.VK_ENTER:
